@@ -8,6 +8,7 @@ import { TodoModal } from './components/TodoModal';
 import { Loader } from './components/Loader';
 import { Todo } from './types/Todo';
 import { getTodos } from './api';
+import classNames from 'classnames';
 
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -38,7 +39,7 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <div className="section">
+      <div className={classNames('section', { 'is-loading': isLoading })}>
         <div className="container">
           <div className="box">
             <h1 className="title">Todos:</h1>
